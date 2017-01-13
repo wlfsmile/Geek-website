@@ -12,7 +12,7 @@
 
   写代码命名加上自己的首字母+下划线，如税小豪（S_）
 
-  长网页每个人负责的版块用一个整的<div>括起来
+  长网页每个人负责的版块用一个整的\<div>括起来
 
 - 实现技术：HTML、CSS、JavaScript/JQuery、Java、Spring MVC、Ajax
 
