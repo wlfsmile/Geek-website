@@ -139,16 +139,26 @@
 		<div id="showhere" class="tab">
 			<div class="show_head">
 				<span>
-					输入学号<input type="text" id="search">
-					<input type="button" id="searchBtn" value="查询">
+					输入学号<input type="text" id="W_search" name="memberId">
+					<input type="button" id="W_searchBtn" value="查询">
 					<button type="button" class="add" >
 					添加成员
 					</button>
 				</span>
 			</div>
 			<div class="graduate_show_body">
-				
 			</div>
+			<!-- 毕业去向的分页 -->
+				<div class="page">
+					<a class="page_prev page_change" id="page_prev">上一页</a>
+					<ul class="page_ul">
+						<!-- <li class="page_li">1</li>
+						<li class="page_li">2</li>
+						<li class="page_li">3</li>
+						<li class="page_li">4</li> -->
+					</ul>
+					<a class="page_next page_change" id="page_next">下一页</a>
+				</div>
 		</div>
 		<!-- 作品展示 -->
 		<div id="showork" class="tab">
