@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="studio.geek.dao.ICandidateDao">
+    <select id="listCandidates" parameterType="studio.geek.util.Page" resultType="Candidate">
+        select `candidate_id`,`name`,`school`,`major`,`direction` from `candidate`
+        ORDER BY ${parameters.order}
+    </select>
+
+    <select id="getCandidateById" parameterType="String" resultType="Candidate">
+        select `candidate_id`,`name`,`school`,`major`,`direction` from `candidate`
+        WHERE `candidate_id` = #{_parameter}
+    </select>
+    <insert id="saveCandidate" parameterType="Candidate">
+        INSERT INTO `candidate` (`candidate_id`, `name`, `school`, `major`, `direction`)
+        VALUES (#{candidateId}, #{name}, #{school}, #{major},  #{direction})
+    </insert>
+</mapper>

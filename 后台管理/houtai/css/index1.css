@@ -81,7 +81,7 @@ body, div, ul,li,h2, h3, h4,form, input,p,a{
 .nav{
 	margin-top: 6px;
 	width: 20%;
-	height: 1000px;
+	height: 760px;
 	background-color: #f2f2f2;
 	float: left;
 	/*border: 1px solid #aaa;*/
@@ -119,9 +119,10 @@ body, div, ul,li,h2, h3, h4,form, input,p,a{
 	border-left: none;
 	background-color: #f2f2f2;
 }
-.show_body{
+.show_body, .graduate_show_body{
 	width: 100%;
-	height: 1000px;
+	/* height: 940px; */
+	/* overflow: hidden; */
 }
 .send_head {
 	margin-top: 6px;
@@ -149,9 +150,16 @@ body, div, ul,li,h2, h3, h4,form, input,p,a{
 	text-align: center;
 	padding: 5px 10px;
 }
+.graduate_show_body table{
+	width: 100%;
+}
+.graduate_show_body table tr td{
+	text-align: center;
+	padding: 5px 10px;
+}
 .memberImg{
-	width: 30px;
-	height: 30px;
+	width: 65px;
+	height: 65px;
 }
 .change, .del{
 	width: 80px;

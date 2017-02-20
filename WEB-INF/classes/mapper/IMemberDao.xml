@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="studio.geek.dao.IMemberDao">
+
+    <resultMap id="currentMember" type="studio.geek.util.CurrentMember">
+        <result column="member_id" jdbcType="CHAR" property="memberId"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="sex" jdbcType="CHAR" property="sex"/>
+        <result column="photo" jdbcType="VARCHAR" property="photo"/>
+        <result column="direction" jdbcType="VARCHAR" property="direction"/>
+        <result column="introduction" jdbcType="VARCHAR" property="introduction"/>
+    </resultMap>
+
+    <select id="getMemberByMemberId" parameterType="String" resultType="Member">
+        SELECT `id`,`member_id`, `name`, `sex`, `photo`, `direction`, `introduction`, `company` FROM `member`
+        WHERE `member_id` = #{_parameter}
+    </select>
+
+
+    <insert id="saveMember" parameterType="Member">
+    INSERT INTO `member` (`member_id`, `name`, `sex`, `photo`, `direction`, `introduction`, `company`)
+    VALUES(#{memberId},#{name},#{sex},#{photo},#{direction},#{introduction},#{company})
+    </insert>
+
+    <delete id="deleteMember" parameterType="String">
+    delete from member where member_id = #{_parameter}
+    </delete>
+
+    <!--删除多个成员-->
+    <delete id="deleteMembers" parameterType="List">
+        delete from member where member_id in(
+        <foreach collection="list" item="item" separator=",">
+            #{item}
+        </foreach>
+        )
+    </delete>
+
+
+    <select id="getAllOldMembers" resultType="Member">
+        SELECT `member_id`, `name`, `sex`, `photo`, `direction`, `introduction`, `company` FROM `member`
+        WHERE `company` IS NOT NULL
+        ORDER BY member_id
+    </select>
+
+    <select id="getCurrentMembersByGrade" parameterType="String" resultMap="currentMember">
+        SELECT `member_id`, `name`, `sex`, `photo`, `direction`, `introduction`, `company` FROM `member`
+        WHERE `member_id` LIKE #{_parameter}"%"
+        ORDER BY member_id
+    </select>
+
+    <select id="listMembersById" parameterType="studio.geek.util.Page" resultType="Member">
+        SELECT `member_id`, `name`, `sex`, `photo`, `direction`, `introduction`, `company` FROM `member`
+        WHERE `member_id` LIKE #{parameters.memberId}"%"
+        order by #{parameters.order}
+    </select>
+
+
+    <select id="listMembersByName" parameterType="studio.geek.util.Page" resultType="Member">
+        select `member_id`, `name`, `sex`, `photo`, `direction`, `introduction`, `company` from member
+        WHERE name LIKE #{parameters.name}"%"
+        order by #{parameters.order}
+    </select>
+
+    <select id="listMembers" parameterType="studio.geek.util.Page" resultType="Member">
+        select `member_id`, `name`, `sex`, `photo`, `direction`, `introduction`, `company` from member
+        order by `${parameters.order}`
+    </select>
+
+
+    <update id="updateMember" parameterType="Member">
+        UPDATE member SET
+        member_id=#{memberId}
+        <if test="name != null and !&quot;&quot;.equals(name.trim())">
+            ,name=#{name}
+        </if>
+        <if test="sex != null and !&quot;&quot;.equals(sex.trim())">
+            ,sex=#{sex}
+        </if>
+        <if test="photo != null and !&quot;&quot;.equals(photo.trim())">
+            ,photo=#{photo}
+        </if>
+        <if test="direction != null and !&quot;&quot;.equals(direction.trim())">
+            ,direction=#{direction}
+        </if>
+        <if test="introduction != null and !&quot;&quot;.equals(introduction.trim())">
+            ,introduction=#{introduction}
+        </if>
+        <if test="company != null and !&quot;&quot;.equals(company.trim())">
+            ,company=#{company}
+        </if>
+        WHERE id = #{id}
+    </update>
+
+
+</mapper>

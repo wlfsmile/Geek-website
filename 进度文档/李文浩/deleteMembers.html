@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript">
         function sub1() {
 //            console.log(url);
             $.ajax({
                 type: "post",//请求方式
-                url: '/member/memberIds',  //发送请求地址
+                url: '/geek/member/memberIds',  //发送请求地址
                 timeout: 30000,//超时时间：30秒
                 data: {
-                    "memberIds": "1,2,3",
+                    "memberIds": "7,8,9",
                     "_method": "delete"
                 },
                 dataType: "json",//设置返回数据的格式
