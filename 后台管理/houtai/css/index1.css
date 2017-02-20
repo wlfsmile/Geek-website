@@ -1,0 +1,217 @@
+body, div, ul,li,h2, h3, h4,form, input,p,a{
+	margin: 0;
+	padding: 0;
+	list-style: none;	
+	text-decoration: none;
+}
+/*添加框*/
+.login{
+	width: 400px;
+	height: 500px;
+	z-index: 9;
+	position: fixed;
+	left: 35%;
+	top:15%;
+	background-color:#32afcf;
+	filter:alpha(opacity=90);  
+    -moz-opacity:0.9;    
+	opacity: 0.9; 
+	font-family: "微软雅黑";
+	border-radius: 10px;
+	display: none;
+}
+.cancel{
+	float: right;
+	padding: 5px;
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+}
+.addMember{
+	margin-top: 50px;
+	text-align: center;
+}
+.addMember p{
+	margin-top: 20px;
+}
+.addMember p input{
+	width: 200px;
+	height: 30px;
+	border-radius: 5px;
+	padding-left: 10px;
+}
+.file{
+	width: 100px;
+	height: 20px;
+}
+.addMember p textarea{
+	width: 200px;
+	height: 60px;
+	border-radius: 5px;
+}
+.addSub,.changeSub{
+	margin-top: 20px;
+	margin-left: 180px;
+}
+/*管理界面样式*/
+.head{
+	width: 100%;
+	height: 50px;
+	background-color: #32afcf;
+	color: #fff;
+}
+.logo{
+	font-size: 48px;
+	font-weight: bold;
+	float: left;
+	margin-left: 30px;
+}
+.userName{
+	float: right;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 50px;
+	margin-right: 50px;
+}
+.main{
+	width: 100%;
+	float: left;
+	margin-top: -10px;
+}
+.nav{
+	margin-top: 6px;
+	width: 20%;
+	height: 1000px;
+	background-color: #f2f2f2;
+	float: left;
+	/*border: 1px solid #aaa;*/
+}
+.nav_left {
+
+}
+.nav_left li{
+	line-height: 20px;
+	border: 1px solid #eee;
+	border-top: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+.nav_left li:hover {
+	background-color: gray;
+}
+.active {
+	float: right;
+	width: 80%;
+	display: block;
+}
+.tab{
+	float: right;
+	width: 80%;
+	display: none;
+}
+.show_head{
+	margin-top: 6px;
+	width: 100%;
+	height: 60px;
+	border: 1px solid #eee;
+	border-top: none;
+	border-left: none;
+	background-color: #f2f2f2;
+}
+.show_body{
+	width: 100%;
+	height: 1000px;
+}
+.send_head {
+	margin-top: 6px;
+	width: 100%;
+	height: 58px;
+	border: 1px solid #eee;
+	border-top: none;
+	border-left: none;
+	background-color: #f2f2f2;
+}
+#search{
+	width: 200px;
+	height: 20px;
+	border-radius: 3px;
+	margin-top: 20px;
+	margin-left: 10px;
+}
+.show_head span{
+	margin-left: 20px;
+}
+.show_body table{
+	width: 100%;
+}
+.show_body table tr td{
+	text-align: center;
+	padding: 5px 10px;
+}
+.memberImg{
+	width: 30px;
+	height: 30px;
+}
+.change, .del{
+	width: 80px;
+	height:20px; 
+	cursor: pointer;
+}
+.add{
+	width: 100px;
+	height: 25px;
+	float: right;
+	margin-right: 50px;
+	margin-top: 20px;
+	cursor: pointer;
+}
+/*遮罩层*/
+.mask{
+	background-color: #000;
+	opacity: 0.75;
+	filter: alpha(opacity=75);
+	width: 100%;
+	height: 1000px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 3;
+	display: none;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

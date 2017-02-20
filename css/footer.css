@@ -1,0 +1,54 @@
+html,body,ul,li,p,a{margin:0;padding;}
+.S_footer{width: 100%;
+          height: 300px;
+          background-color: #3b3b3b;
+          float: left;
+         
+
+}
+.S_word{width: 100px;
+	    height: 100px;
+	    margin-top: 60px;
+	    margin-left: 500px;
+	    float: left;
+}
+.S_word:hover{opacity: 0.5;
+}
+.S_word img{width: 100px;
+     height: 100px;
+}
+.S_word p{font-size:14px;
+          font-family: "微软雅黑";
+          color: #D5D2CE;
+          text-indent: 2em;
+}
+.S_word p:hover{color: #ffffff;
+}
+.S_wechat{width: 100px;
+          height: 100px;
+          margin-top: 60px;
+          margin-left: 100px;
+          float: left;
+}
+.S_wechat img{width: 100px;
+     height: 100px;
+}
+.S_wechat:hover{opacity: 0.5;
+}
+.S_box{width: 80%;
+       height: 2px;
+       margin-top: 40px;
+       margin-left: 10%;
+       border-top: 1px solid #d5d2ce;
+       float: left;
+}
+.S_state{width: 60%;
+         height: 60px;
+         margin-top: 20px;
+         margin-left: 20%;
+         float: left;
+}
+.S_state p{font-size:14px;
+           color: #D5D2CE;
+           text-indent: 2em;
+}

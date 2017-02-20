@@ -1,0 +1,57 @@
+/*头部标题*/
+.W_leader_logo{
+	font-size: 32px;
+	width: 100px;
+	height: 70px;
+	margin-left: 200px;
+	margin-top: 62px;
+}
+.W_logo_chinese{
+	font-family: "方正姚体";
+	/*font-weight: bold;*/
+	line-height: 32px;
+	text-align: center;
+}
+.W_logo_english{
+	font-family: "Axure Handwriting";
+	text-align: center;
+	line-height: 40px;
+}
+/*负责人信息*/
+.W_leaderInfo{
+	width: 902px;
+	height: 302px;
+	margin: 0 auto;
+	border: 1px solid #000;
+	margin-top: 60px;
+}
+.W_personalInfo{
+	width: 180px;
+	height: 300px;
+	float: left;
+	position: relative;
+}
+.W_personalInfo img{
+	width: 180px;
+	height: 180px;
+	cursor: pointer;
+	position: absolute;
+	z-index: 3;
+}
+.W_introduce{
+	width: 100%;
+	height: 120px;
+	background-color: #4c4c4c;
+	background: rgba(0,0,0,0.7);
+	text-indent: 2em;
+	font-size: 14px;
+	font-family: "方正姚体";
+	position: absolute;
+	z-index: 1;
+	color: #fff;
+}
+.W_introduce p{
+	margin-top: 20px;
+	margin-right: 5px;
+	margin-left: 15px;
+}

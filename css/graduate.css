@@ -1,0 +1,134 @@
+body, div, ul,li,h2, h3, h4,form, input,p{
+	margin: 0;
+	padding: 0;	
+	list-style: none;
+}
+.WLF{
+	margin-bottom: 100px;
+	margin-top: 135px;
+}
+/*头部标题*/
+.W_logo{
+	font-size: 32px;
+	width: 130px;
+	height: 70px;
+	margin-left: 200px;
+	margin-top: 62px;
+}
+.W_chinese{
+	font-family: "方正姚体";
+	/*font-weight: bold;*/
+	line-height: 32px;
+	text-align: center;
+}
+.W_english{
+	font-family: "Axure Handwriting";
+	line-height: 40px;
+}
+/*毕业去向照片*/
+.W_main{
+	margin-top: 30px;
+}
+.W_picture{
+	margin-left: 200px;
+	width: 86.1%;
+}
+.W_picture li{
+	float: left;
+	cursor: pointer;
+	width: 120px;
+	height: 120px;
+	position: relative;
+	border: solid 1px #4c4c4c;
+	overflow: hidden;
+	margin-right: 15px;
+	margin-bottom: 15px;
+	background-color: #4c4c4c;
+}
+.W_picture li img{
+	width: 100%;
+	height: 120px;
+	transition: 0.5s;
+	max-width: 100%; 
+	vertical-align: middle;
+}
+/*遮罩层*/
+/*.mask{
+	background-color: #000;
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 4;
+	color: #fff;
+	text-align: center;
+    transform-origin: right bottom;     
+	-webkit-transform-origin: right bottom; 
+	-moz-transform-origin: right bottom; 
+	
+    transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	
+    transition: all 0.35s;
+	-webkit-transition: all 0.35s;
+	-moz-transition: all 0.35s;
+}*/
+.mask_data{
+	position: absolute; 
+	left: 0; 
+	top: 0; 
+	background-color: #4c4c4c; 
+	height: 100%; 
+	opacity: 0; 
+	width: 100%; 
+	padding: 20px;
+	text-align: center;
+	color: #fff;
+}
+.mask_data p{
+	font-family: "微软雅黑";
+	font-size: 12px;
+}
+.mask_data h4{
+	font-size: 16px; 
+}
+/*.W_main ul li:hover .mask{
+    transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+}*/
+.W_main ul li:hover img{
+	transform: scale(0.3) translateY(-110%); 
+	position: relative; 
+	z-index: 9;
+}
+.W_main ul li .mask_data{
+	transform: translateY(100%); 
+	opacity: 0; 
+	padding: 45px 0px 10px; 
+	transition: 0.5s;
+}
+.W_main ul li:hover .mask_data{
+	transform: translateY(0px);
+	 opacity: 1;
+}
+
+/*清除浮动*/
+.clear{
+	clear:both
+}
+.clearfix:after{
+	content:".";
+	display:block;
+	height:0;
+	font-size:0;
+	clear:both;
+	visibility:hidden
+}
+.clearfix{
+	zoom:1
+}

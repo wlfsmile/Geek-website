@@ -1,0 +1,96 @@
+html,body,ul,li,p{margin:0;
+                  padding:0;}
+/*.SXH{margin-top: 62px;
+     }*/
+.S_banner{width: 100%;
+          height: 500px;
+          float:left;
+          background:url(imgage/psb.jpg);
+          position: absolute;
+}
+.S_geek{width: 400px;
+        height: 100px;
+        margin-left:500px;
+        margin-top: 180px;
+        float: left;
+        z-index: 2;
+         position: absolute;
+}
+.S_geek p{font-family: '楷体';
+          font-size: 100px;
+          color: #ffffff;
+          position: absolute;
+}
+.S_wait{width: 400px;
+        height: 50px;
+        margin-left:650px;
+        margin-top: 350px;
+        float: left;
+        z-index: 2;
+        position:absolute;
+}
+.S_wait p{font-family: '楷体';
+          font-size: 50px;
+          color: #ffffff;
+           position: absolute;
+}
+#focus {width:100%; 
+	    height:500px; 
+	    overflow:hidden; 
+	    position:relative;
+}
+
+#focus ul {
+	       height:500px; 
+	       position:absolute; 
+	       bottom:0;
+}
+#focus ul li {float:left; 
+	          width:20%; 
+	          height:500px; 
+	          overflow:hidden; 
+	          position:relative;
+}
+#focus ul li div {position:absolute; 
+	              overflow:hidden;
+}
+#focus ul li p{ color:#FFF; 
+	            font-size:12px; 
+	            height:28px; 
+	            line-height:28px; 
+	            position:absolute; 
+	            bottom:0; 
+	            left:15px;}
+#focus .btnBg {}
+#focus .btn {position:absolute; 
+	         bottom:5px; 
+	         right:5px; 
+	         z-index:10;
+}
+#focus .btn span { background:#8C8C8C; 
+	               width:62px; 
+	               height:7px;  
+	               cursor:pointer;
+	               display:block; 
+	               float:left; 
+	               margin-left:1px; 
+	               text-indent:-100em; 
+	               overflow:hidden;
+}
+#focus .btn span.on,#focus .btn span:hover { background:url(image/shouye/xinBtnBg.png) -63px 0;
+}
+#focus .preNext {width:45px; 
+	             height:100px; 
+	             position:absolute; 
+	             top:90px; 
+	             background:url(imgage/sprite.png) no-repeat 0 0; 
+	             cursor:pointer; 
+	             display:none;
+}
+#focus .pre {left:0; 
+	         display:none;
+}
+#focus .next {right:0; 
+	          background-position:right top; 
+	          display:none;
+}

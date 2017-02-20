@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index1</title>
+	<link rel="stylesheet" type="text/css" href="css/index1.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/graduate.js"></script>
+	<script type="text/javascript" src="js/log.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			var arr1=document.getElementById("member"),
+				arr2=document.getElementById("whereabouts"),
+				arr3=document.getElementById("workshow"),
+				arr4=document.getElementById("joinus"),
+				tab1=document.getElementById("showmem"),
+				tab2=document.getElementById("showhere"),
+				tab3=document.getElementById("showork"),
+				tab4=document.getElementById("showjoin");
+			arr1.onclick=function(){
+				tab1.className="active";
+				tab2.className="tab";
+				tab3.className="tab";
+				tab4.className="tab";
+			}
+			arr2.onclick=function(){
+				tab1.className="tab";
+				tab2.className="active";
+				tab3.className="tab";
+				tab4.className="tab";
+			}
+			arr3.onclick=function(){
+				tab1.className="tab";
+				tab2.className="tab";
+				tab3.className="active";
+				tab4.className="tab";
+			}
+			arr4.onclick=function(){
+				tab1.className="tab";
+				tab2.className="tab";
+				tab3.className="tab";
+				tab4.className="active";
+			}
+		}
+	</script>
+</head>
+<body>
+	<!-- 添加框 -->
+	<div class="login">
+		<span class="cancel">×</span> 
+		<div class="login_content">
+			<!-- <form class="addMember" method="post" name="formDada" enctype="multipart/form-data">
+			</form>
+			<button type="button" class="sub">提交</button> -->
+		</div>
+		
+	</div>
+	<!-- 工作室成员 -->
+	<div class="head">
+		<li class="logo">Geek</li>
+		<li class="userName">wlf</li>
+	</div>
+	<div class="main">
+		<div class="nav">
+			<ul class="nav_left">
+				<li>
+					<a href="##" id="member">	
+						工作室成员
+						<span class="arrow"></span>
+					</a>
+				</li>
+				<li>
+					<a href="##" id="whereabouts">
+						毕业去向
+						<span class="arrow"></span>
+					</a>
+				</li>
+				<li>
+					<a href="##" id="workshow">
+						作品展示
+						<span class="arrow"></span>
+					</a>
+				</li>
+				<li>
+					<a href="##" id="joinus">
+						加入我们						
+						<span class="arrow"></span>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<!-- 工作室成员 -->
+		<div id="showmem" class="active">
+			<div class="show_head">
+				<span>
+					输入学号<input type="text" id="search">
+					<input type="button" id="searchBtn" value="查询">
+				</span>
+				<button type="button" class="add" >
+					添加
+				</button>
+			</div>
+			<div class="show_body">
+				<table border="1" cellspacing="0" class="show_table">
+					<tr>
+						<td>memberId</td>
+						<td>name</td>
+						<td>sex</td>
+						<td>direction</td>
+						<td>introduction</td>
+						<td>company</td>
+						<td>photo</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td><img src="" class="memberImg" alt="img"></td>
+						<td>
+							<button type="button" class="change">
+							修改
+							</button>
+						</td>
+						<td>
+							<button type="button" class="del">
+							删除
+							</button>
+						</td>
+					</tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+				</table>
+			</div>
+		</div>
+		<!-- 毕业去向 -->
+		<div id="showhere" class="tab">
+			<div class="show_head">
+				<span>
+					输入学号<input type="text" id="search">
+					<input type="button" id="searchBtn" value="查询">
+					<button type="button" class="add" >
+					添加成员
+					</button>
+				</span>
+			</div>
+			<div class="show_body">
+				<table border="1" cellspacing="0" class="W_show_table">
+					<tr>
+						<td>memberId</td>
+						<td>name</td>
+						<td>sex</td>
+						<td>direction</td>
+						<td>introduction</td>
+						<td>company</td>
+						<td>photo</td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<!-- 作品展示 -->
+		<div id="showork" class="tab">
+			<div class="show_head">
+				3
+			</div>
+		</div>
+		<!-- 加入我们 -->
+		<div id="showjoin" class="tab">
+			<div class="show_head">
+				4
+			</div>
+		</div>
+	</div>
+	<div class="mask"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
