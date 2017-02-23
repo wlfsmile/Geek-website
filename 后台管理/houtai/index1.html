@@ -44,7 +44,7 @@
 	</script>
 </head>
 <body>
-	<!-- 添加框 -->
+	<!-- 添加框-->
 	<div class="login">
 		<span class="cancel">×</span> 
 		<div class="login_content">
@@ -96,43 +96,7 @@
 					添加
 				</button>
 			</div>
-			<div class="show_body">
-				<table border="1" cellspacing="0" class="show_table">
-					<tr>
-						<td>memberId</td>
-						<td>name</td>
-						<td>sex</td>
-						<td>direction</td>
-						<td>introduction</td>
-						<td>company</td>
-						<td>photo</td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>1</td>
-						<td>1</td>
-						<td>1</td>
-						<td>1</td>
-						<td>1</td>
-						<td><img src="" class="memberImg" alt="img"></td>
-						<td>
-							<button type="button" class="change">
-							修改
-							</button>
-						</td>
-						<td>
-							<button type="button" class="del">
-							删除
-							</button>
-						</td>
-					</tr>
-					<tr></tr>
-					<tr></tr>
-					<tr></tr>
-					<tr></tr>
-				</table>
+			<div class="members_show_body">
 			</div>
 		</div>
 		<!-- 毕业去向 -->
@@ -163,8 +127,25 @@
 		<!-- 作品展示 -->
 		<div id="showork" class="tab">
 			<div class="show_head">
-				3
+				<span>
+					<button type="button" class="work_add" >
+					添加作品
+					</button>
+				</span>
 			</div>
+			<div class="work_show_body">
+			</div>
+		<!-- 作品展示的分页 -->
+			<div class="workPage">
+				<a class="workPage_prev workPage_change" id="workPage_prev">上一页</a>
+				<ul class="workPage_ul">
+					<!-- <li class="page_li">1</li>
+					<li class="page_li">2</li>
+					<li class="page_li">3</li>
+					<li class="page_li">4</li> -->
+				</ul>
+				<a class="workPage_next workPage_change" id="workPage_next">下一页</a>
+			</div>	
 		</div>
 		<!-- 加入我们 -->
 		<div id="showjoin" class="tab">
@@ -176,6 +157,8 @@
 	<div class="mask"></div>
 	<script type="text/javascript" src="js/graduate.js"></script>
 	<script type="text/javascript" src="js/log.js"></script>
+	<script type="text/javascript" src="js/member.js"></script>
+	<script type="text/javascript" src="js/work.js"></script>
 </body>
 </html>
 

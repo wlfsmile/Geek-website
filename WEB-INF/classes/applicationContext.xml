@@ -14,11 +14,11 @@
         <property name="driverClass" value="#{jdbc.driver}"/>
         <property name="user" value="#{jdbc.user}"/>
         <property name="password" value="#{jdbc.password}"/>
-
-
         <property name="initialPoolSize" value="#{jdbc.initial}"/>
         <property name="minPoolSize" value="#{jdbc.min}"/>
         <property name="maxPoolSize" value="#{jdbc.max}"/>
+
+
         <!-- 当获取连接失败重试次数 -->
         <property name="acquireIncrement" value="#{jdbc.increment}"/>
     </bean>

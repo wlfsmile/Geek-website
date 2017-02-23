@@ -1,7 +1,7 @@
 // 初始图片交互
-	/*$.ajax({
+	$.ajax({
 		type : "GET",
-		url : "/geek/member/allOldMembers",
+		url : "/home/allOldMembers",
 		success : function(data){
 			if (data.success ==true){
 				var str = '';
@@ -59,8 +59,8 @@
 		error : function(){
 			alert("请求失败");
 		}
-	})*/
-	var data = [
+	})
+	/*var data = [
 	{
 		img : "image/W_1.jpg",
 		name : "税java",
@@ -241,4 +241,4 @@
 	}
 	// 两个循环相加，添加到html中
 	str = str2 + str4;
-	$(".W_main").html(str);
+	$(".W_main").html(str);*/

@@ -91,10 +91,9 @@ function c(){
 	})
 }
 function g(){
-	var nowPage = 1;
 	$.ajax({
 		type : "GET",
-		url : "/geek/member/listOldMembers/"+nowPage,
+		url : "/geek/member/listOldMembers/"+1,
 		success : function(data){
 			var p = new Promise(function(res, rej){
 				if (data.success == true) {
@@ -104,13 +103,13 @@ function g(){
 				}
 			});
 			p.then(function(){
-				var oData = data.data.listCurrentMembers;
+				var oData = data.data.listMembers;
 				var len = oData.length;
 				var graduateStr = '';
 				var str = '';
 				var pageSize = data.page;
 				var pageNum = data.data.page.totalPage;
-				// 
+				var nowPage = data.data.page.currentPage;
 				for(var i=0;i<len;i++){
 					graduateStr+='<tr class="graduate_tr">'+
 									'<td class="member_id">'+oData[i].memberId+'</td>'+
@@ -147,6 +146,15 @@ function g(){
 				}
 				$(".page_ul").html(pageStr);
 
+				//按钮高亮显示
+				$(".page_li").eq(nowPage-1).css({
+					"background-color": "#32afcf",
+					"color": "#fff"
+				}).siblings().css({
+					"background-color": "#fff",
+					"color": "#aaa"
+				});
+
 				// 分页数字按钮点击
 				$(".page li").click(function(){
 					nowPage = $(this).text();
@@ -155,13 +163,13 @@ function g(){
 						url : "/geek/member/listOldMembers/"+nowPage,
 						success : function(data){
 							if (data.success == true) {
-								var oData = data.data.listCurrentMembers;
+								var oData = data.data.listMembers;
 								var len = oData.length;
 								var graduateStr = '';
 								var str = '';
 								var pageSize = data.page;
 								var pageNum = data.data.page.totalPage;
-								// 
+								var nowPage = data.data.page.currentPage
 								for(var i=0;i<len;i++){
 									graduateStr+='<tr class="graduate_tr">'+
 													'<td class="member_id">'+oData[i].memberId+'</td>'+
@@ -191,6 +199,14 @@ function g(){
 										'</table>';
 								$('.graduate_show_body').html(str);
 								c();
+								//按钮高亮显示
+								$(".page_li").eq(nowPage-1).css({
+									"background-color": "#32afcf",
+									"color": "#fff"
+								}).siblings().css({
+									"background-color": "#fff",
+									"color": "#aaa"
+								});
 							}else{
 								alert("点击按钮失败");
 							}
@@ -212,13 +228,13 @@ function g(){
 						url : "/geek/member/listOldMembers/"+nowPage,
 						success : function(data){
 							if (data.success == true) {
-								var oData = data.data.listCurrentMembers;
+								var oData = data.data.listMembers;
 								var len = oData.length;
 								var graduateStr = '';
 								var str = '';
 								var pageSize = data.page;
 								var pageNum = data.data.page.totalPage;
-								// 
+								var nowPage = data.data.page.currentPage;
 								for(var i=0;i<len;i++){
 									graduateStr+='<tr class="graduate_tr">'+
 													'<td class="member_id">'+oData[i].memberId+'</td>'+
@@ -248,6 +264,14 @@ function g(){
 										'</table>';
 								$('.graduate_show_body').html(str);
 								c();
+								//按钮高亮显示
+								$(".page_li").eq(nowPage-1).css({
+									"background-color": "#32afcf",
+									"color": "#fff"
+								}).siblings().css({
+									"background-color": "#fff",
+									"color": "#aaa"
+								});
 							}else{
 								alert("点击按钮失败");
 							}
@@ -264,19 +288,19 @@ function g(){
 					if (nowPage == pageNum) {
 						alert("已经是最后一页了");
 					}else{
-					nowPage = nowPage+1;
+					nowPage = nowPage + 1;
 					$.ajax({
 						type : "GET",
 						url : "/geek/member/listOldMembers/"+nowPage,
 						success : function(data){
 							if (data.success == true) {
-								var oData = data.data.listCurrentMembers;
+								var oData = data.data.listMembers;
 								var len = oData.length;
 								var graduateStr = '';
 								var str = '';
 								var pageSize = data.page;
 								var pageNum = data.data.page.totalPage;
-								// 
+								var nowPage = data.data.page.currentPage;
 								for(var i=0;i<len;i++){
 									graduateStr+='<tr class="graduate_tr">'+
 													'<td class="member_id">'+oData[i].memberId+'</td>'+
@@ -306,6 +330,14 @@ function g(){
 										'</table>';
 								$('.graduate_show_body').html(str);
 								c();
+								//按钮高亮显示
+								$(".page_li").eq(nowPage-1).css({
+									"background-color": "#32afcf",
+									"color": "#fff"
+								}).siblings().css({
+									"background-color": "#fff",
+									"color": "#aaa"
+								});
 							}else{
 								alert("点击按钮失败");
 							}
@@ -329,7 +361,7 @@ function g(){
 }
 $(function(){
 // 毕业去向初始展示
-$(".nav_left a").click(function(){
+$("#whereabouts").click(function(){
 	//var nowPage=1;	
 	g();
 	/*$.ajax({
@@ -344,7 +376,7 @@ $(".nav_left a").click(function(){
 				}
 			});
 			p.then(function(){
-				var oData = data.data.listCurrentMembers;
+				var oData = data.data.listMembers;
 				var len = oData.length;
 				var graduateStr = '';
 				var str = '';
@@ -395,7 +427,7 @@ $(".nav_left a").click(function(){
 						url : "/geek/member/listOldMembers/"+nowPage,
 						success : function(data){
 							if (data.success == true) {
-								var oData = data.data.listCurrentMembers;
+								var oData = data.data.listMembers;
 								var len = oData.length;
 								var graduateStr = '';
 								var str = '';
@@ -452,7 +484,7 @@ $(".nav_left a").click(function(){
 						url : "/geek/member/listOldMembers/"+nowPage,
 						success : function(data){
 							if (data.success == true) {
-								var oData = data.data.listCurrentMembers;
+								var oData = data.data.listMembers;
 								var len = oData.length;
 								var graduateStr = '';
 								var str = '';
@@ -510,7 +542,7 @@ $(".nav_left a").click(function(){
 						url : "/geek/member/listOldMembers/"+nowPage,
 						success : function(data){
 							if (data.success == true) {
-								var oData = data.data.listCurrentMembers;
+								var oData = data.data.listMembers;
 								var len = oData.length;
 								var graduateStr = '';
 								var str = '';
@@ -567,4 +599,283 @@ $(".nav_left a").click(function(){
 		}
 	})*///ajax结束
 });//点击毕业去向结束
+
+// 点击学号查询
+$("#W_searchBtn").click(function(){
+	var nowPage = 1;
+	var url = "/geek/member/memberId/"+$("#W_search").val()+"/"+nowPage;
+	$.ajax({
+		type : "GET",
+		url : url,
+		success : function(data){
+			if (data.success == true) {
+				if(data.data == "not found."){
+					alert("没有该数据");
+				}else{
+					console.log(data.data);
+					var mData = data.data.listMembers;
+					var cStr = '';
+					var s = '';
+					var len = mData.length;
+					var pageNum = data.data.page.totalPage;
+					for(var i=0;i<len;i++){
+						cStr+='<tr class="graduate_tr">'+
+										'<td class="member_id">'+mData[i].memberId+'</td>'+
+										'<td>'+mData[i].name+'</td>'+
+										'<td>'+mData[i].sex+'</td>'+
+										'<td>'+mData[i].direction+'</td>'+
+										'<td>'+mData[i].introduction+'</td>'+
+										'<td>'+mData[i].company+'</td>'+
+										'<td><img src='+mData[i].photo+' class="memberImg" alt="img"></td>'+
+										'<td><button type="button" class="change">修改</button></td>'+
+										'<td><button type="button" class="del" onclick="del()">删除</button></td>'+
+									'</tr>';
+					}
+					s =   '<table border="1" cellspacing="0" class="">'+
+								'<tr>'+
+									'<td>memberId</td>'+
+									'<td>name</td>'+
+									'<td>sex</td>'+
+									'<td>direction</td>'+
+									'<td>introduction</td>'+
+									'<td>company</td>'+
+									'<td>photo</td>'+
+									'<td></td>'+
+									'<td></td>'+
+								'</tr>'+
+								cStr+
+							'</table>';
+					$('.graduate_show_body').html(s);
+					c();
+
+					// 生成分页按钮
+					var pageStr = '';
+					var pageStr_1 = '';
+					for(var i=1;i<=pageNum;i++){
+						pageStr_1+='<li class="page_li">'+ i +'</li>';
+					}
+					pageStr = '<a class="page_prev page_change" id="page_prev_1">上一页</a>'+
+							  '<ul class="page_ul">'+
+							  	pageStr_1+
+							  '</ul>'+
+							  '<a class="page_next page_change" id="page_next_1">下一页</a>';
+					$(".page").html(pageStr);
+
+					//按钮高亮显示
+					$(".page_li").eq(nowPage-1).css({
+						"background-color": "#32afcf",
+						"color": "#fff"
+					}).siblings().css({
+						"background-color": "#fff",
+						"color": "#aaa"
+					});
+					// 分页数字按钮点击
+					$(".page li").click(function(){
+						nowPage = $(this).text();
+						$.ajax({
+							type : "GET",
+							url : "/geek/member/listOldMembers/"+nowPage,
+							success : function(data){
+								if (data.success == true) {
+									var mData = data.data.listMembers;
+									var len = mData.length;
+									var cStr = '';
+									var s = '';
+									var pageSize = data.page;
+									var pageNum = data.data.page.totalPage;
+									// 
+									for(var i=0;i<len;i++){
+										cStr+='<tr class="graduate_tr">'+
+														'<td class="member_id">'+mData[i].memberId+'</td>'+
+														'<td>'+mData[i].name+'</td>'+
+														'<td>'+mData[i].sex+'</td>'+
+														'<td>'+mData[i].direction+'</td>'+
+														'<td>'+mData[i].introduction+'</td>'+
+														'<td>'+mData[i].company+'</td>'+
+														'<td><img src='+mData[i].photo+' class="memberImg" alt="img"></td>'+
+														'<td><button type="button" class="change">修改</button></td>'+
+														'<td><button type="button" class="del" onclick="del()">删除</button></td>'+
+													'</tr>';
+									}
+									s =   '<table border="1" cellspacing="0" class="">'+
+												'<tr>'+
+													'<td>memberId</td>'+
+													'<td>name</td>'+
+													'<td>sex</td>'+
+													'<td>direction</td>'+
+													'<td>introduction</td>'+
+													'<td>company</td>'+
+													'<td>photo</td>'+
+													'<td></td>'+
+													'<td></td>'+
+												'</tr>'+
+												cStr+
+											'</table>';
+									$('.graduate_show_body').html(s);
+									c();
+
+									//按钮高亮显示
+									$(".page_li").eq(nowPage-1).css({
+										"background-color": "#32afcf",
+										"color": "#fff"
+									}).siblings().css({
+										"background-color": "#fff",
+										"color": "#aaa"
+									});
+								}else{
+									alert("点击按钮失败");
+								}
+							},
+							error : function(){
+								alert("点击按钮请求失败")
+							}
+						})
+					})
+
+					// 上一页点击
+					$("#page_prev_1").click(function(){
+						if (nowPage == 1) {
+							alert("已经是第一页了");
+						}else{
+						nowPage = nowPage - 1;
+						$.ajax({
+							type : "GET",
+							url : "/geek/member/listOldMembers/"+nowPage,
+							success : function(data){
+								if (data.success == true) {
+									var mData = data.data.listMembers;
+									var len = mData.length;
+									var cStr = '';
+									var s = '';
+									var pageSize = data.page;
+									var pageNum = data.data.page.totalPage;
+									// 
+									for(var i=0;i<len;i++){
+										cStr+='<tr class="graduate_tr">'+
+														'<td class="member_id">'+mData[i].memberId+'</td>'+
+														'<td>'+mData[i].name+'</td>'+
+														'<td>'+mData[i].sex+'</td>'+
+														'<td>'+mData[i].direction+'</td>'+
+														'<td>'+mData[i].introduction+'</td>'+
+														'<td>'+mData[i].company+'</td>'+
+														'<td><img src='+mData[i].photo+' class="memberImg" alt="img"></td>'+
+														'<td><button type="button" class="change">修改</button></td>'+
+														'<td><button type="button" class="del" onclick="del()">删除</button></td>'+
+													'</tr>';
+									}
+									s =   '<table border="1" cellspacing="0" class="">'+
+												'<tr>'+
+													'<td>memberId</td>'+
+													'<td>name</td>'+
+													'<td>sex</td>'+
+													'<td>direction</td>'+
+													'<td>introduction</td>'+
+													'<td>company</td>'+
+													'<td>photo</td>'+
+													'<td></td>'+
+													'<td></td>'+
+												'</tr>'+
+												cStr+
+											'</table>';
+									$('.graduate_show_body').html(s);
+									c();
+
+									//按钮高亮显示
+									$(".page_li").eq(nowPage-1).css({
+										"background-color": "#32afcf",
+										"color": "#fff"
+									}).siblings().css({
+										"background-color": "#fff",
+										"color": "#aaa"
+									});
+
+								}else{
+									alert("点击按钮失败");
+								}
+							},//如果ajax成功结束
+							error : function(){
+								alert("点击按钮请求失败")
+							}
+						})//ajax请求结束
+						}//else结束
+					});//点击事件结束
+
+					//下一页点击
+					$("#page_next_1").click(function(){
+						if (nowPage == pageNum) {
+							alert("已经是最后一页了");
+						}else{
+						nowPage = nowPage+1;
+						$.ajax({
+							type : "GET",
+							url : "/geek/member/listOldMembers/"+nowPage,
+							success : function(data){
+								if (data.success == true) {
+									var mData = data.data.listMembers;
+									var len = mData.length;
+									var cStr = '';
+									var s = '';
+									var pageSize = data.page;
+									var pageNum = data.data.page.totalPage;
+									// 
+									for(var i=0;i<len;i++){
+										cStr+='<tr class="graduate_tr">'+
+														'<td class="member_id">'+mData[i].memberId+'</td>'+
+														'<td>'+mData[i].name+'</td>'+
+														'<td>'+mData[i].sex+'</td>'+
+														'<td>'+mData[i].direction+'</td>'+
+														'<td>'+mData[i].introduction+'</td>'+
+														'<td>'+mData[i].company+'</td>'+
+														'<td><img src='+mData[i].photo+' class="memberImg" alt="img"></td>'+
+														'<td><button type="button" class="change">修改</button></td>'+
+														'<td><button type="button" class="del" onclick="del()">删除</button></td>'+
+													'</tr>';
+									}
+									s =   '<table border="1" cellspacing="0" class="">'+
+												'<tr>'+
+													'<td>memberId</td>'+
+													'<td>name</td>'+
+													'<td>sex</td>'+
+													'<td>direction</td>'+
+													'<td>introduction</td>'+
+													'<td>company</td>'+
+													'<td>photo</td>'+
+													'<td></td>'+
+													'<td></td>'+
+												'</tr>'+
+												cStr+
+											'</table>';
+									$('.graduate_show_body').html(s);
+									c();
+
+									//按钮高亮显示
+									$(".page_li").eq(nowPage-1).css({
+										"background-color": "#32afcf",
+										"color": "#fff"
+									}).siblings().css({
+										"background-color": "#fff",
+										"color": "#aaa"
+									});
+
+								}else{
+									alert("点击按钮失败");
+								}
+							},//如果ajax发送成功结束
+							error : function(){
+								alert("点击按钮请求失败")
+							}
+						})//ajax请求结束
+						}//else结束
+					})//点击事件结束
+				}
+			}else{
+				alert("失败");
+			}
+		},
+		error : function(){
+			alert("请求失败");
+		}
+	})
+})
+
 })//function渲染结束

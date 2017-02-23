@@ -1,7 +1,7 @@
 	var imgs='';
 	$.ajax({
 		type : "GET",
-		url : "/geek/production/allProductions",
+		url : "/home/allProductions",
 		success : function(data){
 			if (data.success == true){
 		        var oData = data.data;

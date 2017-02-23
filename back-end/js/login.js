@@ -8,17 +8,18 @@ $(function(){
 			// 发送用户名和密码给后台
 			$.ajax({
 				type : "POST",
-				url : "/geek/management/login",
-				contentType : "application/json",
+				url : "/management/login",
+				//contentType : "application/json",
 				data : {
 					username : $(".userName").val(),
 					password : $(".password").val()
 				},
 				success : function(data){
+					console.log(data);
 					var oData = data.data;
 					if (data.success==true) {
-						if (oData == "登录成功") {
-							window.location.href = 'index.html';
+						if (oData == "success") {
+							window.location.href = 'back-end.html';
 						}else{
 							alert("用户名或密码错误");
 						}	

@@ -34,7 +34,7 @@ body, div, ul,li,h2, h3, h4,form, input,p,a{
 #addMember p,#changeMember p{
 	margin-top: 20px;
 }
-#addMember p input,#changeMember p input{
+#addMember p input,#changeMember p input,#addWork p input, #changeWork p input{
 	width: 200px;
 	height: 30px;
 	border-radius: 5px;
@@ -44,14 +44,15 @@ body, div, ul,li,h2, h3, h4,form, input,p,a{
 	width: 100px;
 	height: 20px;
 }
-#addMember p textarea,#changeMember p textarea{
+#addMember p textarea,#changeMember p textarea,#addWork p textarea, #changeWork p textarea{
 	width: 200px;
 	height: 60px;
 	border-radius: 5px;
 }
-.addSub,.changeSub{
+.addSub,.changeSub, .workSub{
 	margin-top: 20px;
 	margin-left: 180px;
+	text-align: center;
 }
 /*管理界面样式*/
 .head{
@@ -119,7 +120,7 @@ body, div, ul,li,h2, h3, h4,form, input,p,a{
 	border-left: none;
 	background-color: #f2f2f2;
 }
-.show_body, .graduate_show_body{
+.members_show_body, .graduate_show_body{
 	width: 100%;
 	/* height: 940px; */
 	/* overflow: hidden; */
@@ -143,10 +144,10 @@ body, div, ul,li,h2, h3, h4,form, input,p,a{
 .show_head span{
 	margin-left: 20px;
 }
-.show_body table{
+.members_show_body table{
 	width: 100%;
 }
-.show_body table tr td{
+.members_show_body table tr td{
 	text-align: center;
 	padding: 5px 10px;
 }
@@ -157,7 +158,14 @@ body, div, ul,li,h2, h3, h4,form, input,p,a{
 	text-align: center;
 	padding: 5px 10px;
 }
-.memberImg{
+.work_show_body table{
+	width: 100%;
+}
+.work_show_body table tr td{
+	text-align: center;
+	padding: 5px 10px;
+}
+.memberImg, .productionImg{
 	width: 65px;
 	height: 65px;
 }
@@ -166,7 +174,7 @@ body, div, ul,li,h2, h3, h4,form, input,p,a{
 	height:20px; 
 	cursor: pointer;
 }
-.add{
+.add, .work_add{
 	width: 100px;
 	height: 25px;
 	float: right;
@@ -174,8 +182,14 @@ body, div, ul,li,h2, h3, h4,form, input,p,a{
 	margin-top: 20px;
 	cursor: pointer;
 }
+/*删除、修改按钮*/
+.change,.del,.delWork,.changeWork{
+	width: 80px;
+	height: 20px;
+	cursor: pointer;
+}
 /*毕业去向分页*/
-.page{
+.page,.workPage{
 	width: 100%;
 	height: 35px;
 	display: block;
@@ -184,11 +198,11 @@ body, div, ul,li,h2, h3, h4,form, input,p,a{
 	text-align: center;
 	position: relative;
 }
-.page_ul{
+.page_ul, .workPage_ul{
 	overflow: hidden;
 	display: inline-block;
 }
-.page li{
+.page li,.workPage_li{
 	margin: 0;
 	padding: 0;
 	width: 33px;
@@ -205,7 +219,7 @@ body, div, ul,li,h2, h3, h4,form, input,p,a{
 	cursor: pointer;
 	font-family: "微软雅黑";
 }
-.page .page_change{
+.page .page_change,.workPage .workPage_change{
 	border: 1px solid #e7e7e7;
 	font-size: 16px;
 	font-weight: bold;
@@ -216,17 +230,25 @@ body, div, ul,li,h2, h3, h4,form, input,p,a{
 	height: 33px;
 	cursor: pointer;
 }
-.page .page_next{
+.page .page_next,.workPage .workPage_next{
 	position: absolute;
 	right: 140px;
 }
-.page .page_prev{
+.page .page_prev,.workPage .workPage_prev{
 	position: absolute;
 	left: 140px;	
 }
-.page_change:hover,.page li:hover{
+.page_change:hover,.page li:hover,.workPage_change:hover,.workPage li:hover{
 	background-color: #32afcf;
 	color: #fff;
+}
+/*作品展示*/
+#addWork{
+	margin-top: 80px;
+	text-align: center;
+}
+#addWork p,#changeWork p{
+	margin-top: 30px;
 }
 /*遮罩层*/
 .mask{

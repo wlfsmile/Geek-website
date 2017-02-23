@@ -36,30 +36,115 @@
 .T_memberHeading_english{
 	font-family: 'Axure Handwriting';
 }
+
+/*成员信息*/
+#T_main{
+	position: relative;
+	width: 100%;
+	height: 500px;
+}
+.T_container{
+	margin: 4% auto;
+	width: 210px;
+	height: 150px;
+	position: relative;
+	perspective: 1000;
+}
+.T_container ul{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transform-style: preserve-3d;
+	animation: rotation 20s infinite linear;
+}
+.T_container ul:hover{
+	animation-play-state: paused;
+}
+.T_container ul figure{
+	display: block;
+	position: absolute;
+	width: 134px;
+	height: 150px;
+	left: 10px;
+	top: 10px;
+	background: black;
+	overflow: hidden;
+	border: solid 5px black;
+}
+/*.T_container figure:nth-child(1){transform: rotateY(0deg) translateZ(288px);}
+.T_container figure:nth-child(2) { transform: rotateY(28deg) translateZ(288px);}
+.T_container figure:nth-child(3) { transform: rotateY(56deg) translateZ(288px);}
+.T_container figure:nth-child(4) { transform: rotateY(84deg) translateZ(288px);}
+.T_container figure:nth-child(5) { transform: rotateY(112deg) translateZ(288px);}
+.T_container figure:nth-child(6) { transform: rotateY(140deg) translateZ(288px);}
+.T_container figure:nth-child(7) { transform: rotateY(168deg) translateZ(288px);}
+.T_container figure:nth-child(8) { transform: rotateY(196deg) translateZ(288px);}
+.T_container figure:nth-child(9) { transform: rotateY(224deg) translateZ(288px);}
+.T_container figure:nth-child(10) { transform: rotateY(252deg) translateZ(288px);}
+.T_container figure:nth-child(11) { transform: rotateY(280deg) translateZ(288px);}
+.T_container figure:nth-child(12) { transform: rotateY(308deg) translateZ(288px);}
+.T_container figure:nth-child(13) { transform: rotateY(335deg) translateZ(288px);}*/
+
+.T_container img{
+	filter: grayscale(0);
+	cursor: pointer;
+	transition: all .5s ease;
+}
+.T_container img:hover{
+  	/*animation-play-state: paused;*/
+}
+
+@keyframes rotation{
+	from{
+		transform: rotateY(0deg);
+	}
+	to{
+		transform: rotateY(360deg);
+	}
+}
+/*图片的文字信息*/
+.T_message{
+	width: 130px;
+	height: 150px;
+	background-color: #000;
+	margin: 0 auto;
+	opacity: 0.6;
+	overflow: hidden;
+	position: relative;
+}
+.T_message li{
+	font-family: '方正姚体';
+	font-size: 16px;
+	line-height: 20px;
+	color: #cffcfc;
+	padding-left: 4px;
+
+}
+
 /*tab标签*/
 #T_lable{
-	width: 400px;
-	height: 78px;
+	width: 80px;
+	height: 200px;
 	float: right;
 	margin-right: 30px;
+	margin-top: -220px;
 
 }
 #T_lable ul{
-	width: 398px;
-	height: 40px;
+	width: 78px;
+	height: 160px;
 	margin-top: 30px;
 	background-color: #F7F7F7;
 	border: 1px solid #eee;
 	overflow: hidden;
 }
 #T_lable li{
-	width: 99px;
+	width: 78px;
 	line-height: 40px;
     text-align: center;
-    float: left;
     overflow: hidden;
     border-bottom: 1px solid #eee;
-    padding:0 1px;
+    padding:-1px 1px;
     font-family: '方正姚体';
 	font-size: 16px;
 	color: #000;
@@ -73,96 +158,4 @@
 	border-bottom-color: #fff; 
     border-left: 1px solid #eee;
     border-right: 1px solid #eee;
-}
-
-/*成员信息*/
-#T_main{
-	position: relative;
-	width: 100%;
-	height: 500px;
-	/*background-color: blue;*/
-
-}
-.T_container{
-	margin: 4% auto;
-	width: 210px;
-	height: 150px;
-	position: relative;
-	perspective: 1000;
-	/*background-color: pink;*/
-}
-.T_carousel{
-	width: 100%;
-	height: 100%;
-	overflow: hidden;		
-}
-.T_carousel ul{
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	transform-style: preserve-3d;
-	animation: rotation 30s infinite linear;
-}
-
-.T_carousel ul: hover{
-	animation-play-state: paused;
-}
-.T_carousel figure{
-	display: block;
-	position: absolute;
-	width: 134px;
-	height: 150px;
-	left: 10px;
-	top: 50px;
-	background: black;
-	overflow: hidden;
-	border: solid 5px black;
-}
-.T_carousel figure:nth-child(1){transform: rotateY(0deg) translateZ(288px);}
-.T_carousel figure:nth-child(2) { transform: rotateY(28deg) translateZ(288px);}
-.T_carousel figure:nth-child(3) { transform: rotateY(56deg) translateZ(288px);}
-.T_carousel figure:nth-child(4) { transform: rotateY(84deg) translateZ(288px);}
-.T_carousel figure:nth-child(5) { transform: rotateY(112deg) translateZ(288px);}
-.T_carousel figure:nth-child(6) { transform: rotateY(140deg) translateZ(288px);}
-.T_carousel figure:nth-child(7) { transform: rotateY(168deg) translateZ(288px);}
-.T_carousel figure:nth-child(8) { transform: rotateY(196deg) translateZ(288px);}
-.T_carousel figure:nth-child(9) { transform: rotateY(224deg) translateZ(288px);}
-.T_carousel figure:nth-child(10) { transform: rotateY(252deg) translateZ(288px);}
-.T_carousel figure:nth-child(11) { transform: rotateY(280deg) translateZ(288px);}
-.T_carousel figure:nth-child(12) { transform: rotateY(308deg) translateZ(288px);}
-.T_carousel figure:nth-child(13) { transform: rotateY(335deg) translateZ(288px);}
-
-.T_carousel img{
-	-webkit-filter: grayscale(0);
-	cursor: pointer;
-	transition: all .1s ease;
-}
-.T_carousel img:hover{
-	/*-webkit-filter: grayscale(1);*/
-  	transform: scale(2.0,2.0);
-}
-
-@keyframes rotation{
-	from{
-		transform: rotateY(0deg);
-	}
-	to{
-		transform: rotateY(360deg);
-	}
-}
-.T_message{
-	width: 200px;
-	height: 180px;
-	background-color: #000;
-	margin: 0 auto;
-	opacity: 0.4;
-	overflow: hidden;
-	margin-bottom: 120px;
-}
-.T_message li{
-	font-family: '方正姚体';
-	font-size: 16px;
-	line-height: 36px;
-	color: #cffcfc;
-
 }

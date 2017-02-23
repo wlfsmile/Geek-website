@@ -54,6 +54,7 @@
 	color: #0571ae;
 	line-height: 26px;
 	padding-left: 10px;
+	text-indent: 2em;
 }
 /*图片展示*/
 .T_pic{
@@ -81,7 +82,7 @@
 .T_number p{
 	width: 140px;
 	height: 65px;
-	background-image:url(../images/1.png);
+	background-image:url(../image/T_1.png);
 	float: left;
 }		
 .T_number.T_fly p{

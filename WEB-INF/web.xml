@@ -45,5 +45,12 @@
         <filter-name>HiddenHttpMethodFilter</filter-name>
         <servlet-name>dispatcher</servlet-name>
     </filter-mapping>
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
 
+    <error-page>
+        <error-code>404</error-code>
+        <location>/index.html</location>
+    </error-page>
 </web-app>

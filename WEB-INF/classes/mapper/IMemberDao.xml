@@ -37,58 +37,44 @@
     </delete>
 
 
-    <select id="getAllOldMembers" resultType="Member">
-        SELECT `member_id`, `name`, `sex`, `photo`, `direction`, `introduction`, `company` FROM `member`
-        WHERE `company` IS NOT NULL
-        ORDER BY member_id
-    </select>
 
-    <select id="getCurrentMembersByGrade" parameterType="String" resultMap="currentMember">
-        SELECT `member_id`, `name`, `sex`, `photo`, `direction`, `introduction`, `company` FROM `member`
-        WHERE `member_id` LIKE #{_parameter}"%"
-        ORDER BY member_id
-    </select>
 
     <select id="listMembersById" parameterType="studio.geek.util.Page" resultType="Member">
         SELECT `member_id`, `name`, `sex`, `photo`, `direction`, `introduction`, `company` FROM `member`
         WHERE `member_id` LIKE #{parameters.memberId}"%"
-        order by #{parameters.order}
+        ORDER BY `${parameters.order}` ${parameters.orderType}
     </select>
 
 
     <select id="listMembersByName" parameterType="studio.geek.util.Page" resultType="Member">
         select `member_id`, `name`, `sex`, `photo`, `direction`, `introduction`, `company` from member
         WHERE name LIKE #{parameters.name}"%"
-        order by #{parameters.order}
+        ORDER BY `${parameters.order}` ${parameters.orderType}
     </select>
 
-    <select id="listMembers" parameterType="studio.geek.util.Page" resultType="Member">
-        select `member_id`, `name`, `sex`, `photo`, `direction`, `introduction`, `company` from member
-        order by `${parameters.order}`
+    <select id="listCurrentMembers" parameterType="studio.geek.util.Page" resultType="Member">
+        SELECT `member_id`, `name`, `sex`, `photo`, `direction`, `introduction`, `company` from member
+        WHERE `company` IS NULL
+        ORDER BY `${parameters.order}` ${parameters.orderType}
     </select>
 
+    <select id="listOldMembers" parameterType="studio.geek.util.Page" resultType="Member">
+        SELECT `member_id`, `name`, `sex`, `photo`, `direction`, `introduction`, `company` from member
+        WHERE `company` IS NOT NULL
+        order by `${parameters.order}` ${parameters.orderType}
+    </select>
 
     <update id="updateMember" parameterType="Member">
         UPDATE member SET
         member_id=#{memberId}
-        <if test="name != null and !&quot;&quot;.equals(name.trim())">
-            ,name=#{name}
-        </if>
-        <if test="sex != null and !&quot;&quot;.equals(sex.trim())">
-            ,sex=#{sex}
-        </if>
+        ,name=#{name}
+        ,sex=#{sex}
         <if test="photo != null and !&quot;&quot;.equals(photo.trim())">
             ,photo=#{photo}
         </if>
-        <if test="direction != null and !&quot;&quot;.equals(direction.trim())">
-            ,direction=#{direction}
-        </if>
-        <if test="introduction != null and !&quot;&quot;.equals(introduction.trim())">
-            ,introduction=#{introduction}
-        </if>
-        <if test="company != null and !&quot;&quot;.equals(company.trim())">
-            ,company=#{company}
-        </if>
+        ,direction=#{direction}
+        ,introduction=#{introduction}
+        ,company=#{company}
         WHERE id = #{id}
     </update>
 

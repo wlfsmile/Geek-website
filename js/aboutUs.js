@@ -18,6 +18,7 @@ $(document).ready(
           }
         );
 
+        //箭头点击事件
         $(".T_next").click(
           function(){
             if(nowimg < page){
@@ -48,7 +49,7 @@ $(document).ready(
 
         function move(){
             //加过渡：
-            $(".T_number p").css("transition","all 1s ease 0s");
+            $(".T_number p").css("transition","all 1.5s ease 0s");
             $(".T_number").addClass("T_fly");
             
             $(".T_images img").attr("src","image/T_" + nowimg + ".png");
@@ -61,7 +62,8 @@ $(document).ready(
               $(".T_number").removeClass("T_fly");
             },1000);
         }
-        // 自动
+        
+         // 自动
         var timer;
         // //向右切换
         var play = function(){
@@ -70,12 +72,7 @@ $(document).ready(
             move();
         }
         timer = setInterval(play,2000);
-        $(".T_pic").mouseover(function(){
-            clearInterval(timer);
-        },function(){
-            setInterval(timer);
-        });
-
+        
       }   
 
     );

@@ -5,16 +5,9 @@
 
 <mapper namespace="studio.geek.dao.ICandidateDao">
     <select id="listCandidates" parameterType="studio.geek.util.Page" resultType="Candidate">
-        select `candidate_id`,`name`,`school`,`major`,`direction` from `candidate`
-        ORDER BY ${parameters.order}
+        select `candidate_id`,`name`,`school`,`major`,`direction`,`introduction` from `candidate`
+        ORDER BY `${parameters.order}` ${parameters.orderType}
     </select>
 
-    <select id="getCandidateById" parameterType="String" resultType="Candidate">
-        select `candidate_id`,`name`,`school`,`major`,`direction` from `candidate`
-        WHERE `candidate_id` = #{_parameter}
-    </select>
-    <insert id="saveCandidate" parameterType="Candidate">
-        INSERT INTO `candidate` (`candidate_id`, `name`, `school`, `major`, `direction`)
-        VALUES (#{candidateId}, #{name}, #{school}, #{major},  #{direction})
-    </insert>
+
 </mapper>

@@ -1,0 +1,330 @@
+body, div, ul,li,h2, h3, h4,form, input,p,a{
+	margin: 0;
+	padding: 0;
+	list-style: none;	
+	text-decoration: none;
+}
+/*添加框*/
+.login{
+	width: 400px;
+	height: 500px;
+	z-index: 9;
+	position: fixed;
+	left: 35%;
+	top:15%;
+	background-color:#32afcf;
+	filter:alpha(opacity=90);  
+    -moz-opacity:0.9;    
+	opacity: 0.9; 
+	font-family: "微软雅黑";
+	border-radius: 10px;
+	display: none;
+}
+.cancel{
+	float: right;
+	padding: 5px;
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+}
+#addMember,#changeMember{
+	margin-top: 50px;
+	text-align: center;
+}
+#addMember p,#changeMember p,#changeWork p{
+	margin-top: 20px;
+}
+#addMember p input,#changeMember p input,#addWork p input, #changeWork p input{
+	width: 200px;
+	height: 30px;
+	border-radius: 5px;
+	padding-left: 10px;
+}
+.file{
+	width: 100px;
+	height: 20px;
+}
+#addMember p textarea,#changeMember p textarea,#addWork p textarea, #changeWork p textarea{
+	width: 200px;
+	height: 60px;
+	border-radius: 5px;
+}
+.addSub,.changeSub, .workSub{
+	margin-top: 20px;
+	margin-left: 180px;
+	text-align: center;
+}
+/*管理界面样式*/
+.head{
+	width: 100%;
+	height: 50px;
+	background-color: #32afcf;
+	color: #fff;
+}
+.logo{
+	font-size: 48px;
+	font-weight: bold;
+	float: left;
+	margin-left: 30px;
+}
+.userName{
+	float: right;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 50px;
+	margin-right: 50px;
+}
+.main{
+	width: 100%;
+	float: left;
+	margin-top: -10px;
+}
+.nav{
+	margin-top: 6px;
+	width: 20%;
+	height: 760px;
+	background-color: #f2f2f2;
+	float: left;
+	/*border: 1px solid #aaa;*/
+}
+.managerInfo{
+	width: 100%;
+	height: 100px;
+	margin-top: 40px;
+}
+.managerImg{
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+	margin-left: 100px;
+}
+.nav_left li{
+	line-height: 20px;
+	border: 1px solid #eee;
+	border-top: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+.nav_left li:hover {
+	background-color: gray;
+}
+.active {
+	float: right;
+	width: 80%;
+	display: block;
+}
+.tab{
+	float: right;
+	width: 80%;
+	display: none;
+}
+.show_head{
+	margin-top: 6px;
+	width: 100%;
+	height: 60px;
+	border: 1px solid #eee;
+	border-top: none;
+	border-left: none;
+	background-color: #f2f2f2;
+}
+.members_show_body, .graduate_show_body{
+	width: 100%;
+	/* height: 940px; */
+	/* overflow: hidden; */
+}
+.send_head {
+	margin-top: 6px;
+	width: 100%;
+	height: 58px;
+	border: 1px solid #eee;
+	border-top: none;
+	border-left: none;
+	background-color: #f2f2f2;
+}
+#search,#W_search,#work_search{
+	width: 200px;
+	height: 20px;
+	border-radius: 3px;
+	margin-top: 20px;
+	margin-left: 10px;
+}
+.show_head span{
+	margin-left: 20px;
+}
+.members_show_body table{
+	width: 100%;
+}
+.members_show_body table tr td{
+	text-align: center;
+	padding: 5px 10px;
+}
+.graduate_show_body table,.join_show_body table{
+	width: 100%;
+}
+.join_show_body table tr{
+	height: 80px;
+}
+.join_show_body table .join_tr{
+	height: 30px;
+}
+.graduate_show_body table tr td,.join_show_body table tr td{
+	text-align: center;
+	padding: 5px 10px;
+}
+.work_show_body table{
+	width: 100%;
+}
+.work_show_body table tr td{
+	text-align: center;
+	padding: 5px 10px;
+}
+.memberImg, .productionImg,.joinImg{
+	width: 65px;
+	height: 65px;
+}
+.change, .del{
+	width: 80px;
+	height:20px; 
+	cursor: pointer;
+}
+.add, .work_add, .memadd{
+	width: 100px;
+	height: 25px;
+	float: right;
+	margin-right: 50px;
+	margin-top: 20px;
+	cursor: pointer;
+}
+/*删除、修改按钮*/
+.change,.del,.delWork,.changeWork{
+	width: 80px;
+	height: 20px;
+	cursor: pointer;
+}
+/*毕业去向分页*/
+.graduatePage,.page,.workPage,.joinPage{
+	width: 100%;
+	height: 35px;
+	display: block;
+	margin-bottom: 60px;
+	margin-top: 30px;
+	text-align: center;
+	position: relative;
+}
+.graduatePage_ul,.page_ul, .workPage_ul, .joinPage_ul{
+	overflow: hidden;
+	display: inline-block;
+}
+.graduatePage li,.page li,.workPage_li,.joinPage_li{
+	margin: 0;
+	padding: 0;
+	width: 33px;
+	height: 33px;
+	float: left;
+	list-style: none;
+	margin-right: 16px;
+	border: 1px solid #e7e7e7;
+	font-size: 16px;
+	font-weight: bold;
+	color: #666;
+	line-height: 33px;
+	text-align: center;
+	cursor: pointer;
+	font-family: "微软雅黑";
+}
+.graduatePage .graduatePage_change,.page .page_change,.workPage .workPage_change,.joinPage .joinPage_change{
+	border: 1px solid #e7e7e7;
+	font-size: 16px;
+	font-weight: bold;
+	color: #666;
+	line-height: 33px;
+	text-align: center;
+	width: 73px;
+	height: 33px;
+	cursor: pointer;
+}
+.graduatePage_next,.page_next,.workPage_next,.joinPage_next{
+	position: absolute;
+	right: 140px;
+}
+.graduatePage .graduatePage_prev,.page .page_prev,.workPage_prev,.joinPage_prev{
+	position: absolute;
+	left: 140px;	
+}
+.graduatePage_change:hover,.graduatePage li:hover,.page_change:hover,.page li:hover,.workPage_change:hover,.workPage li:hover,.joinPage_change:hover,.joinPage li:hover{
+	background-color: #32afcf;
+	color: #fff;
+}: #fff;
+}
+/*作品展示*/
+#addWork,#changeWork{
+	margin-top: 80px;
+	text-align: center;
+}
+#addWork p,#changeWork p{
+	margin-top: 30px;
+}
+/*遮罩层*/
+.mask{
+	background-color: #000;
+	opacity: 0.75;
+	filter: alpha(opacity=75);
+	width: 100%;
+	height: 1000px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 3;
+	display: none;
+	cursor: pointer;
+}
+/*清除浮动*/
+.clear{
+	clear:both
+}
+.clearfix:after{
+	content:".";
+	display:block;
+	height:0;
+	font-size:0;
+	clear:both;
+	visibility:hidden
+}
+.clearfix{
+	zoom:1
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
