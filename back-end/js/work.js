@@ -365,7 +365,6 @@ $(function(){
 										var pageNum = data.data.page.totalPage;
 										nowPage = data.data.page.currentPage;
 										for(var i=0;i<len;i++){
-											console.log(oData);
 											workStr+='<tr>'+
 															'<td>'+oData[i].name+'</td>'+
 															'<td>'+oData[i].url+'</td>'+

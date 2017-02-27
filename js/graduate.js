@@ -18,6 +18,7 @@
 				var len = Math.floor(lenSum/7);
 				// 算出最后一行的个数
 				var len1 = lenSum%7;
+
 				// 循环获取出前n-1行中全满的照片及信息
 				for(var i=0;i<len;i++){
 					for(var j=i*7;j<i*7+7;j++){
