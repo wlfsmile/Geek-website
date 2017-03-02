@@ -1,3 +1,11 @@
+//点击导航栏
+$(".nav_left li a").click(function(){
+	$(this).parent("li").css({
+		"background-color":" gray"
+	}).siblings().css({
+		"background-color":"#f2f2f2"
+	});
+})
 // 毕业去向点击保存添加的调用函数
 function saveMember(){
 	var form = new FormData(document.getElementById("addMember"));

@@ -23,11 +23,11 @@ $(document).ready(function(){
                 var str = '';
                 var count = data.data.length;
                 for(var i = 0; i < count; i++){
-                    str += '<figure>'+'<img src=' + data.data[i].photo +'>' +
+                    str += '<figure>'+'<img src=' + data.data[i].photo +' class="pic_img">' +
                                 '<div class="T_message"><li>姓名：'+ data.data[i].name + 
                                 '</li><li>性别：' + data.data[i].sex +
                                 '</li><li>方向：' + data.data[i].direction + 
-                                '</li><li>格言：' + data.data[i].introduction + '</li></div>'
+                                '</li><li>简介：' + data.data[i].introduction + '</li></div>'
                         +'</figure>';  
                 }
                 $(".T_container .T_2015").html(str);
@@ -37,9 +37,11 @@ $(document).ready(function(){
                  var $imgL = $(".T_2015 figure").length;
                  // 角度
                  var Deg = 360 / $imgL;
+                 var r = 67 / Math.tan((Deg / 2) / 180 * Math.PI);
+                 var Zlength = r + 20;
                  // 遍历，改变图片的样式
                  $(".T_2015 figure").each(function(i){
-                     $(this).css({"transform": "rotateY(" + i * Deg + "deg)translateZ(288px)" });
+                     $(this).css({"transform": "rotateY(" + i * Deg + "deg)translateZ(" + Zlength +"px)" });
                  });
 
 
@@ -48,7 +50,7 @@ $(document).ready(function(){
                 $(".T_message").css({"top": "120px"});
                 // 滑动效果
                 $(".T_container ul figure").hover(function(){
-                    $(this).find(".T_message").animate({"top":  "-204px"},700);
+                    $(this).find(".T_message").stop(true, false).animate({"top":  "-153px"},700);
                 },function(){
                     $('.T_message').css({"top": "120px"});
                 });
@@ -76,11 +78,11 @@ $(document).ready(function(){
                     var str1 = '';
                     var count =  data.data.length;
                     for(var i = 0; i < count; i++){
-                        str +=  '<figure class="pic">'+'<img src=' +  data.data[i].photo +'>' 
+                        str +=  '<figure class="pic">'+'<img src=' +  data.data[i].photo +' class="pic_img">' 
                                          + '<div class="T_message"><li>姓名：'+  data.data[i].name + 
                                              '</li><li>性别：' +  data.data[i].sex +
                                              '</li><li>方向：' +  data.data[i].direction + 
-                                             '</li><li>格言：' +   data.data[i].introduction + 
+                                             '</li><li>简介：' +   data.data[i].introduction + 
                                              '</li></div></figure>';  
                                             
                     }
@@ -96,9 +98,11 @@ $(document).ready(function(){
                         console.log($imgL);
                         // 角度
                         var Deg = 360 / $imgL;  
+                        var r = 67 / Math.tan((Deg / 2) / 180 * Math.PI);
+                        var Zlength = r + 20;
                         // 遍历，改变图片的样式
                         $(".pic").each(function(i){
-                            $(this).css({"transform": "rotateY(" + i * Deg + "deg)translateZ(288px)" });
+                            $(this).css({"transform": "rotateY(" + i * Deg + "deg)translateZ(" + Zlength +"px)" });
                         });
                         
                     //鼠标hover图片出现遮罩层及文字
@@ -106,7 +110,7 @@ $(document).ready(function(){
                     $(".T_message").css({"top": "120px"});
                     // 滑动效果
                     $(".T_container ul figure").hover(function(){
-                        $(this).find(".T_message").stop(true, false).animate({"top":  "-204px"},700);
+                        $(this).find(".T_message").stop(true, false).animate({"top":  "-153px"},700);
                     },function(){
                         $('.T_message').css({"top": "120px"});
                     });

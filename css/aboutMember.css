@@ -38,6 +38,10 @@
 }
 
 /*成员信息*/
+.pic_img{
+	width: 134px;
+	height: 150px;
+}
 #T_main{
 	position: relative;
 	width: 100%;

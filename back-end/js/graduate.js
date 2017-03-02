@@ -89,6 +89,66 @@ function c(){
 		})
 		return false;
 	})
+	$(".mchange").click(function(){
+		$(".login").css({
+			"display":"block"
+		});
+		$(".mask").css({
+			"display":"block"
+		});
+		var changeStr = '';
+		changeStr = '<form id="changeMember" method="post" name="formDada" enctype="multipart/form-data">'+
+						'<p>'+
+							'<input type="file" name="file" class="file">'+
+						'</p>'+
+						'<p class="p_memberId">'+
+							'学号:<input type="text" class="memberId" name="memberId" value='+ $(this).parent().siblings().eq(0).text() +'>'+
+						'</p>'+
+						'<p>'+
+							'姓名:<input type="text" class="name" name="name" value='+ $(this).parent().siblings().eq(1).text()+'>'+
+						'</p>'+
+						'<p>'+
+							'性别:<input type="text" class="sex" name="sex" value='+ $(this).parent().siblings().eq(2).text() +' >'+
+						'</p>'+
+						'<p>'+
+							'方向:<input type="text" class="direction" name="direction" value='+ $(this).parent().siblings().eq(4).text() +'>'+
+						'</p>'+
+						
+						'<p>'+
+							'简介:<textarea type="text" class="introduction" name="introduction">'+$(this).parent().siblings().eq(5).text()+'</textarea>'+
+						'</p>'+
+						'<input type="hidden" name="_method" value="put">'+
+					'</form>'+
+					'<button type="button" class="changeSub" >保存修改</button>';
+		$(".login_content").html(changeStr);
+		// 点击保存修改
+		var t = $(this).parent().siblings().eq(0).text();
+		$(".changeSub").click(function(){
+			var form = new FormData(document.getElementById("changeMember"));
+			var url = "/member/memberId/"+t;
+				$.ajax({
+					type : "POST",
+					url : url,
+					data : form,
+					cache: false,
+					processData: false,
+			        contentType: false,
+					success : function(data){
+						if (data.success == true) {
+							alert(data.data);
+							window.location.reload();
+						}else{
+							alert("失败")
+						}
+					},
+					error : function(){
+						alert("请求失败");
+					}
+				});//ajax结束
+		})
+		return false;
+	})
+
 }
 function g(){
 	$.ajax({

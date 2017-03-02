@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>index</title>
 	<link rel="stylesheet" type="text/css" href="css/nav.css">
+	<link rel="stylesheet" type="text/css" href="css/form.css">
 	<link href="css/goble.css" rel="stylesheet" type="text/css" />
     <link href="css/shouye.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="css/aboutUs.css">
@@ -24,11 +25,48 @@
 		<a href="##"><li>团队介绍</li></a>
 		<a href="##"><li>毕业去向</li></a>
 		<a href="##"><li>作品展示</li></a>
-		<a href="##"><li>加入我们</li></a>
+		<!-- <a href="##"><li>加入我们</li></a> -->
 	</ul>
 </div>
+
+<!-- 加入我们 -->
+<div class="form">
+	<div class="index">
+		<span>加入我们</span>
+	</div>
+	<!-- 加入我们表单 -->
+	<form  method="post" class="basic-grey">
+		<h1>Join us
+			<span>请填写以下信息加入我们</span>
+		</h1>
+		<label>
+			<span>学号 :</span>
+			<input id="c_candidateId" type="text" name="name" placeholder="Your Number" />
+		</label>
+		<label>
+			<span>姓名 :</span>
+			<input id="c_name" type="email" name="email" placeholder="Your Full Name" />
+		</label>
+		<label>
+			<span>学校 :</span>
+			<input id="c_school" type="email" name="email" placeholder="Your school" />
+		</label>
+		<label>
+			<span>专业 :</span>
+			<input id="c_major" type="email" name="email" placeholder="Your Major" />
+		</label>
+		<label>
+			<span>方向 :</span>
+			<input id="c_direction" type="email" name="email" placeholder="Your direction" />
+		</label>
+		<label>
+			<span>&nbsp;</span>
+			<input type="button" class="button" value="提交" id="c_submit"/>
+		</label>
+	</form>
+</div>
 <!-- 首页 -->
-<div class="SXH">
+<div id="SXH">
 	<div class="S_banner">
 	    <div class="S_geek" id="S_geek">
 	    	<p>Geek</p>
@@ -203,9 +241,8 @@
 		</div>			
 	</div>
 </div>
-
 <!-- 毕业去向 -->
-<div class="WLF">
+<div id="WLF">
 	<!-- 头部标题 -->
 	<div class="W_logo">
 		<div class="W_chinese">毕业去向</div>
@@ -224,7 +261,11 @@
 		<p class="S_ach">achievements</p>
 	</div>
 	<div id="S_slider"></div>
-	<div class="S_intr"></div>
+	<div class="S_intr">
+		<!-- <span class="S_infoTitle">作品简介</span>
+		<p class="S_infoMeassage"></p>
+		<p class="S_infoUrl">链接地址：</p> -->
+	</div>
 </div>
 <!-- footer -->
 <div class="S_footer">
@@ -241,10 +282,10 @@
 </div>
 <script type="text/javascript" src="js/nav.js"></script>
 <script type="text/javascript" src="js/nav1.js"></script>
+<script type="text/javascript" src="js/form.js"></script>
 <script src="js/shouye.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/aboutUs.js"></script>
 <script type="text/javascript" src="js/aboutMember.js"></script>
-<!-- <script type="text/javascript" src="js/prefixfree.min.js"></script> -->
 <script type="text/javascript" src="js/graduate.js"></script>
 <script type="text/javascript" src="js/chengguo.js"></script>
 <script type="text/javascript" src="js/jquery.mousewheel.m.js"></script>

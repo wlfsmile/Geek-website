@@ -54,3 +54,15 @@ html,body,ul,li,p,a{margin:0;
 */      border: solid 1px #000000;
         float: left;
 }
+.S_infoTitle{
+  font-size: 24px;
+  margin-left: 100px;
+  font-family: "方正姚体";
+}
+.S_infoMeassage{
+  text-indent: 2em;
+}
+.S_intr p{
+  margin-top: 30px;
+  font-family: "微软雅黑";
+}

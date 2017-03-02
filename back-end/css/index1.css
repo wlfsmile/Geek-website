@@ -27,11 +27,11 @@ body, div, ul,li,h2, h3, h4,form, input,p,a{
 	height: 25px;
 	cursor: pointer;
 }
-#addMember,#changeMember{
+#addMember,#changeMember,#addWork,#changeWork{
 	margin-top: 50px;
 	text-align: center;
 }
-#addMember p,#changeMember p,#changeWork p{
+#addMember p,#changeMember p,#changeWork p,#addWork p{
 	margin-top: 20px;
 }
 #addMember p input,#changeMember p input,#addWork p input, #changeWork p input{
@@ -183,7 +183,7 @@ body, div, ul,li,h2, h3, h4,form, input,p,a{
 	width: 65px;
 	height: 65px;
 }
-.change, .del{
+.change, .del,.mchange{
 	width: 80px;
 	height:20px; 
 	cursor: pointer;

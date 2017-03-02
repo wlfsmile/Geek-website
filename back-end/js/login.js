@@ -19,7 +19,7 @@ $(function(){
 					var oData = data.data;
 					if (data.success==true) {
 						if (oData == "success") {
-							window.location.href = 'back-end.html';
+							window.location.href = "back-end.html?username";
 						}else{
 							alert("用户名或密码错误");
 						}	
