@@ -60,7 +60,7 @@
 .T_pic{
 	float: right;
 	width: 460px;
-	height: 500px;
+	height: 400px;
 	overflow: hidden;
 	position: relative;
 }
@@ -100,7 +100,6 @@
 .T_number.T_fly p:nth-child(10){-webkit-transform:rotateX(20deg) rotateY(20deg) translateZ(400px);}
 .T_number.T_fly p:nth-child(11){-webkit-transform:rotateX(30deg) rotateY(10deg) translateZ(400px);}
 .T_number.T_fly p:nth-child(12){-webkit-transform:rotateX(10deg) rotateY(10deg) translateZ(400px);}
-
 
 .T_prev{
 	width: 30px;

@@ -7,7 +7,7 @@
 	right: 0;
 	margin-right: -250px;
 }
-.index{
+#index{
 	width: 30px;
 	height: 90px;
 	z-index: 999;
@@ -19,6 +19,7 @@
 	border-radius:5px 0 0 5px;
 	font-family: "微软雅黑";
 	cursor: pointer;
+	display: none;
 }
 .basic-grey {
 	width: 250px;

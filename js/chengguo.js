@@ -1,4 +1,4 @@
-var imgs='';
+var imgs;
 (function(){
 		$.ajax({
 			type : "GET",

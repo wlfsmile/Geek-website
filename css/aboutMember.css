@@ -23,7 +23,7 @@
 /*标题*/
 #T_memberHeading{
 	width: 240px;
-	float: left;
+	/* float: left; */
 }
 #T_memberHeading h1{
 	text-align: center;

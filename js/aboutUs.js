@@ -26,7 +26,7 @@ $(document).ready(
             }else{
               nowimg = 1;
             }
-            move();
+            move();       
           }
         );
         $(".T_prev").click(
@@ -37,16 +37,19 @@ $(document).ready(
               nowimg = page;
             }
             move();
+           
           }
         );
 
         // 隐藏箭头
         $(".T_pic").hover(function(){
           $(".T_arrow").show();
+          clearInterval(timer);
         },function(){
           $(".T_arrow").hide();
+          timer = setInterval(autoPlay,2000);
+          
         });
-
         function move(){
             //加过渡：
             $(".T_number p").css("transition","all 1.5s ease 0s");
@@ -62,17 +65,14 @@ $(document).ready(
               $(".T_number").removeClass("T_fly");
             },1000);
         }
-        
-         // 自动
-        var timer;
-        // //向右切换
-        var play = function(){
-            nowimg ++;
-            nowimg = nowimg > page ? 1 : nowimg;
-            move();
+
+        // 自动
+        function autoPlay(){
+          $(".T_next").click();
+         //向右切换
         }
-        timer = setInterval(play,2000);
-        
+        var timer = setInterval(autoPlay,2000);
+
       }   
 
     );
